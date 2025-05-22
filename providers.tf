@@ -6,16 +6,16 @@ terraform {
     }
   }
   required_version = ">= 0.14.9"
+
+  #backend "azurerm" {
+  #  resource_group_name  = azurerm_resource_group.devopscadre_rg.name
+  #  storage_account_name = "azuredevops"
+  #  container_name       = "tfstate"
+  #  key                  = "terraform.tfstate"
+  #}
 }
 
 provider "azurerm" {
   features {}
-
- # skip_provider_registration = "true"
-
-  # Connection to Azure
   subscription_id = var.subscription_id
-  # client_id = var.client_id
-  # client_secret = var.client_secret
-  # tenant_id = var.tenant_id
 }
